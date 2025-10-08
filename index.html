@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My HTML CSS Project</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Gotu&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.iconify.design/iconify-icon/1.0.8/iconify-icon.min.js"></script>
+    <script>
+        let currentSet = 0;
+
+        function slideCarousel(direction) {
+            const container = document.querySelector('.instagram-cards-container');
+            const containerWidth = container.offsetWidth;
+
+            if (direction === 'next' && currentSet === 0) {
+                currentSet = 1;
+            } else if (direction === 'prev' && currentSet === 1) {
+                currentSet = 0;
+            }
+
+            const carousel = document.querySelector('.instagram-cards');
+            const translateX = -(currentSet * containerWidth);
+            carousel.style.transform = `translateX(${translateX}px)`;
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const nextBtn = document.querySelector('.carousel-btn.next');
+            const prevBtn = document.querySelector('.carousel-btn.prev');
+
+            nextBtn.addEventListener('click', () => slideCarousel('next'));
+            prevBtn.addEventListener('click', () => slideCarousel('prev'));
+        });
+    </script>
+</head>
+
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="top-bar-left">
+            <span class="top-bar-message">
+                Save more when you bundle with Heveya &reg;
+                <iconify-icon icon="mdi:chevron-right" class="top-bar-arrow"></iconify-icon>
+            </span>
+        </div>
+        <div class="top-bar-right">
+            <a href="#">Events</a>
+            <a href="#">Showroom</a>
+            <a href="#">Journal</a>
+            <a href="#">Support<iconify-icon icon="mingcute:down-line" class="top-bar-dropdown"></iconify-icon></a>
+            <a href="#">Why Heveya<iconify-icon icon="mingcute:down-line" class="top-bar-dropdown"></iconify-icon></a>
+            <a href="#">Account</a>
+        </div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="navbar-left">
+            <img src="logo.svg" alt="Logo" class="logo" />
+            <ul class="menu">
+                <li>
+                    <a href="#">Mattresses</a>
+                    <iconify-icon icon="mingcute:down-line" class="dropdown-icon"></iconify-icon>
+                </li>
+                <li>
+                    <a href="#">Bed Frames</a>
+                    <iconify-icon icon="mingcute:down-line" class="dropdown-icon"></iconify-icon>
+                </li>
+                <li>
+                    <a href="#">Pillows & Bolster</a>
+                    <iconify-icon icon="mingcute:down-line" class="dropdown-icon"></iconify-icon>
+                </li>
+                <li>
+                    <a href="#">Sheets</a>
+                    <iconify-icon icon="mingcute:down-line" class="dropdown-icon"></iconify-icon>
+                </li>
+                <li>
+                    <a href="#">Accessories</a>
+                    <iconify-icon icon="mingcute:down-line" class="dropdown-icon"></iconify-icon>
+                </li>
+                <li><a href="#">Bundles</a></li>
+            </ul>
+        </div>
+        <div class="navbar-right">
+            <a href="#" class="icon"><iconify-icon icon="iconamoon:search-light"></iconify-icon></a>
+            <a href="#" class="icon"><iconify-icon icon="solar:cart-large-minimalistic-linear"></iconify-icon></a>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb Bar -->
+    <div class="breadcrumb-bar">
+        Create Your Perfect Bedding Set: Mix and Match Across Our Organic Collections.
+    </div>
+
+    <!-- Banner Section -->
+    <div class="banner"></div>
+
+    <!-- Collection Section -->
+    <section class="collection-section">
+        <div class="container">
+            <div class="collection-header">
+                <h2>Our collections</h2>
+                <a href="#" class="shop-all-btn">Shop All</a>
+            </div>
+            <div class="collection-cards">
+                <div class="card-wrapper">
+                    <div class="card">
+                        <img src="img/mattresses.jpg" alt="Product 1">
+                    </div>
+                    <div class="card-label">
+                        <span>Mattresses & Frames</span>
+                        <iconify-icon icon="ep:right" class="card-label-arrow"></iconify-icon>
+                    </div>
+                </div>
+                <div class="card-wrapper">
+                    <div class="card">
+                        <img src="img/pillows.jpg" alt="Product 2">
+                    </div>
+                    <div class="card-label">
+                        <span>Pillows & Bolsters</span>
+                        <iconify-icon icon="ep:right" class="card-label-arrow"></iconify-icon>
+                    </div>
+                </div>
+                <div class="card-wrapper">
+                    <div class="card">
+                        <img src="img/sheets.jpg" alt="Product 3">
+                    </div>
+                    <div class="card-label">
+                        <span>Sheets & Duvets</span>
+                        <iconify-icon icon="ep:right" class="card-label-arrow"></iconify-icon>
+                    </div>
+                </div>
+                <div class="card-wrapper">
+                    <div class="card">
+                        <img src="img/bedding.jpg" alt="Product 4">
+                    </div>
+                    <div class="card-label">
+                        <span>Bedding Accessories</span>
+                        <iconify-icon icon="ep:right" class="card-label-arrow"></iconify-icon>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Split Section -->
+    <section class="split-section container">
+        <div class="split-left">
+            <img src="img/bundle.jpg" alt="Bundle Offer">
+        </div>
+        <div class="split-right">
+            <div class="bundle-header">Bundle Offer</div>
+            <div class="bundle-subheader">Mattress & Bed Frame Bundle Offer</div>
+            <p>Visit any of our showrooms and enjoy an exclusive bundle offer: Get 10% OFF* when you pair any
+                Heveya®
+                mattress with our new bed frames.</p>
+            <p>Crafted with timeless design and solid support, it’s the perfect way to start fresh. Available in
+                wooden
+                (Ligna) and upholstered fabric (Lusso) to match your style with motorised & non-motorised options.
+            </p>
+            <p>CODE: DREAMDUO</p>
+            <a href="#" class="shop-now-btn">Shop Now</a>
+        </div>
+    </section>
+
+    <!-- Content With Cards Section -->
+    <section class="content-with-cards">
+        <div class="container">
+            <div class="text-button-row">
+                <div class="mission">At Heveya®, sleep comes first – we believe that there’s a way to sleep better,
+                    naturally.</div>
+                <a href="#" class="learn-more-btn">Learn More</a>
+            </div>
+
+            <div class="card-pair">
+                <div class="card-box">
+                    <img src="img/awards.jpg" alt="Card 1">
+                    <div class="card-label">
+                        <p>Honoured to receive best<br>mattresses and beddings awards<br>by Expat Living and<br>
+                            Honeycombers
+                            Readers</p>
+                    </div>
+                </div>
+                <div class="card-box">
+                    <img src="img/google-reviews.jpg" alt="Google Reviews">
+                    <div class="card-label">
+                        <div class="reviews-stats">
+                            <p>Over 700 reviews</p>
+                            <p>3000 mattresses sold</p>
+                            <p>5250 happy sleepers</p>
+                            <a href="#" class="read-reviews-link">Read reviews<iconify-icon icon="ep:right"
+                                    class="reviews-arrow"></iconify-icon></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Grid Section -->
+    <section class="product-grid-section">
+        <div class="container">
+            <h2 class="section-heading">What others are loving</h2>
+            <div class="product-grid">
+                <div class="product-card">
+                    <img src="img/natural-organic-latex-mattress-ii.jpg" alt="Natural Organic Latex Mattress II"
+                        class="product-image primary">
+                    <img src="img/natural-organic-latex-mattress-ii-hover.jpg"
+                        alt="Natural Organic Latex Mattress II Hover" class="product-image secondary">
+                    <div class="product-info">
+                        <div class="product-name">Heveya® Natural Organic Latex Mattress II</div>
+                        <p>From $3,088</p>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="img/natural-organic-latex-mattress.jpg" alt="Natural Organic Latex Mattress"
+                        class="product-image primary">
+                    <img src="img/natural-organic-latex-mattress-hover.jpg"
+                        alt="Natural Organic Latex Mattress II Hover" class="product-image secondary">
+                    <div class="product-info">
+                        <div class="product-name">Heveya® Natural Organic Latex Mattress III</div>
+                        <p>From $3,988</p>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="brown-tag">Bundle Deal</div>
+                    <img src="img/pillow-bundle.jpg" alt="Pillow Bundle" class="product-image primary">
+                    <img src="img/pillow-bundle-hover.jpg" alt="Natural Organic Latex Mattress II Hover"
+                        class="product-image secondary">
+                    <div class="product-info">
+                        <div class="product-name">Heveya® Pillow Bundle</div>
+                        <p>$398</p>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="brown-tag">Bundle Deal</div>
+                    <img src="img/bamboo-sheets-bundle.jpg" alt="Bamboo Sheets Bundle" class="product-image primary">
+                    <img src="img/bamboo-sheets-bundle-hover.jpg" alt="Natural Organic Latex Mattress II Hover"
+                        class="product-image secondary">
+                    <div class="product-info">
+                        <div class="product-name">Heveya® Bamboo Sheets Bundle</div>
+                        <p>From $303</p>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="brown-tag">Bundle Deal</div>
+                    <img src="img/linen-sheets-bundle.jpg" alt="Linen Sheets Bundle" class="product-image primary">
+                    <img src="img/linen-sheets-bundle-hover.jpg" alt="Natural Organic Latex Mattress II Hover"
+                        class="product-image secondary">
+                    <div class="product-info">
+                        <div class="product-name">Heveya® Linen Sheets Bundle</div>
+                        <p>From $371</p>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="green-tag">New Colour</div>
+                    <img src="img/bamboo-fitted-sheet-set.jpg" alt="Bamboo Fitted Sheet Set"
+                        class="product-image primary">
+                    <img src="img/bamboo-fitted-sheet-set-hover.jpg" alt="Natural Organic Latex Mattress II Hover"
+                        class="product-image secondary">
+                    <div class="product-info">
+                        <div class="product-name">Heveya® Bamboo Fitted Sheet Set</div>
+                        <p>From $138</p>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="green-tag">Best Seller</div>
+                    <img src="img/natural-organic-latex-pillow-2.jpg" alt="Natural Organic Latex Pillow 2"
+                        class="product-image primary">
+                    <img src="img/natural-organic-latex-pillow-2-hover.jpg"
+                        alt="Natural Organic Latex Mattress II Hover" class="product-image secondary">
+                    <div class="product-info">
+                        <div class="product-name">Heveya® Natural Organic Latex Pillow 2</div>
+                        <p>$258</p>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="green-tag">Best Seller</div>
+                    <img src="img/natural-organic-latex-pillow-4.jpg" alt="Natural Organic Latex Pillow 4"
+                        class="product-image primary">
+                    <img src="img/natural-organic-latex-pillow-4-hover.jpg"
+                        alt="Natural Organic Latex Mattress II Hover" class="product-image secondary">
+                    <div class="product-info">
+                        <div class="product-name">Heveya® Natural Organic Latex Pillow 4</div>
+                        <p>$258</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- New Split Section with Text Overlay -->
+    <section class="split-overlay-section">
+        <div class="container">
+            <div class="split-overlay-content">
+                <div class="split-overlay-left">
+                    <img src="img/b-corp.jpg" alt="Your Image">
+                    <div class="overlay-text">
+                        <h3>Heveya®’s Commitment to a Sustainable Future</h3>
+                        <p>Heveya® is proud to be a Certified B Corporation, joining a global community of businesses
+                            dedicated
+                            to meeting high standards of social and environmental performance, accountability, and
+                            transparency.
+                        </p>
+                        <a href="#" class="overlay-read-more">
+                            Read more
+                            <iconify-icon icon="ep:right" class="read-more-arrow"></iconify-icon>
+                        </a>
+                    </div>
+                </div>
+                <div class="split-overlay-right">
+                    <div class="journal-heading">The Snooze Journal</div>
+                    <div class="info-card">
+                        <img src="img/choosing-pillows.jpg" alt="How to Find the Right Pillow for Better Sleep">
+                        <div class="info-card-content">
+                            <a href="#" class="info-card-btn">Education</a>
+                            <div class="info-card-heading">How to Find the Right Pillow for Better Sleep</div>
+                            <p>Pillows are among the key requirements for a good night’s sleep. Without the right
+                                pillow,
+                                you
+                                get less rest and can even suffer from neck and back pain due to lack of support. In
+                                that
+                                sense,
+                                investing in a good pillow is an investment in your health!</p>
+                        </div>
+                    </div>
+                    <hr class="section-divider">
+                    <div class="info-card">
+                        <img src="img/build-your-dream-bed.jpg" alt="Build Your Dream Bed">
+                        <div class="info-card-content">
+                            <a href="#" class="info-card-btn">Education</a>
+                            <div class="info-card-heading">Build Your Dream Bed - Your extensive guide to everything
+                                bedding
+                            </div>
+                            <p>When it comes to bedding, there is a great variety of materials to choose from. From
+                                bamboo
+                                (natural materials) to polyester (synthetics) and plenty in between, it can be somewhat
+                                confusing and hard to decide. But how to choose the materials that are right for you to
+                                provide
+                                the most comfortable sleep possible?
+                                You will want to consider the following aspects - Do you sleep hot or cold? Do you like
+                                a
+                                clean
+                                neat look or a comfortable mess to fall asleep in? Do you like a silky smooth or a
+                                rougher
+                                texture? Do you usually iron your bedding? Before considering your next bedding
+                                purchase, go
+                                through our extensive guide below!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Instagram Section -->
+    <section class="instagram-section">
+        <div class="container">
+            <div class="instagram-header">
+                <div class="header-left">
+                    <div class="insta-header">#HeveyaHome</div>
+                    <a href="https://instagram.com/" class="insta-link">Let our feed inspire you!</a>
+                    <iconify-icon icon="ep:right" class="card-label-arrow"></iconify-icon>
+                </div>
+                <div class="carousel-controls">
+                    <button class="carousel-btn prev"><iconify-icon icon="mdi:chevron-left"></iconify-icon></button>
+                    <button class="carousel-btn next"><iconify-icon icon="mdi:chevron-right"></iconify-icon></button>
+                </div>
+            </div>
+
+            <div class="instagram-cards-container">
+                <div class="instagram-cards">
+                    <div class="insta-card">
+                        <img src="img/insta1.jpg" alt="Instagram 1" />
+                        <div class="overlay">
+                            <iconify-icon icon="mdi:instagram" class="insta-icon"></iconify-icon>
+                        </div>
+                    </div>
+                    <div class="insta-card">
+                        <img src="img/insta2.jpg" alt="Instagram 2" />
+                        <div class="overlay">
+                            <iconify-icon icon="mdi:instagram" class="insta-icon"></iconify-icon>
+                        </div>
+                    </div>
+                    <div class="insta-card">
+                        <img src="img/insta3.jpg" alt="Instagram 3" />
+                        <div class="overlay">
+                            <iconify-icon icon="mdi:instagram" class="insta-icon"></iconify-icon>
+                        </div>
+                    </div>
+                    <div class="insta-card">
+                        <img src="img/insta4.jpg" alt="Instagram 4" />
+                        <div class="overlay">
+                            <iconify-icon icon="mdi:instagram" class="insta-icon"></iconify-icon>
+                        </div>
+                    </div>
+                    <div class="insta-card">
+                        <img src="img/insta5.jpg" alt="Instagram 1" />
+                        <div class="overlay">
+                            <iconify-icon icon="mdi:instagram" class="insta-icon"></iconify-icon>
+                        </div>
+                    </div>
+                    <div class="insta-card">
+                        <img src="img/insta6.jpg" alt="Instagram 2" />
+                        <div class="overlay">
+                            <iconify-icon icon="mdi:instagram" class="insta-icon"></iconify-icon>
+                        </div>
+                    </div>
+                    <div class="insta-card">
+                        <img src="img/insta7.jpg" alt="Instagram 3" />
+                        <div class="overlay">
+                            <iconify-icon icon="mdi:instagram" class="insta-icon"></iconify-icon>
+                        </div>
+                    </div>
+                    <div class="insta-card">
+                        <img src="img/insta8.jpg" alt="Instagram 4" />
+                        <div class="overlay">
+                            <iconify-icon icon="mdi:instagram" class="insta-icon"></iconify-icon>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Help Section -->
+    <section class="help-section container">
+        <div class="help-left">
+            <div class="help-heading">We’re here to help</div>
+            <p>Our trained sleep consultants are ready to assist you with all your sleeping needs by video, phone or
+                in-store.</p>
+            <div class="help-location">
+                <div class="help-subheader">Heveya® Singapore</div>
+                <div>32 Eng Hoon Street</div>
+                <div>Singapore 169780</div>
+            </div>
+            <p>Monday - Friday: 9am - 6pm<br>Saturday - Sunday: 10am - 7pm</p>
+            <p>After-hours mattress consultations available<br>Wednesday - Sunday: 6pm - 9pm <a href="#">[Book an
+                    appointment]</a></p>
+            <div class="help-location">
+                <div class="help-subheader">Heveya® Great World Store</div>
+                <div>1 Kim Seng Promenade</div>
+                <div>#02-142 Great World</div>
+                <div>Singapore 237994</div>
+            </div>
+            </p>
+            <p>Monday - Sunday: 10am - 10pm</p>
+        </div>
+
+        <div class="help-right">
+            <div class="help-card">
+                <img src="img/contact.jpg" alt="Help Contact">
+                <div class="help-card-text">
+                    Contact
+                    <iconify-icon icon="ep:right" class="help-arrow"></iconify-icon>
+                </div>
+            </div>
+            <div class="help-card">
+                <img src="img/showroom.jpg" alt="Help Showroom">
+                <div class="help-card-text">
+                    Showroom
+                    <iconify-icon icon="ep:right" class="help-arrow"></iconify-icon>
+                </div>
+            </div>
+            <div class="help-card">
+                <img src="img/products.jpg" alt="Help Products">
+                <div class="help-card-text">
+                    Products
+                    <iconify-icon icon="ep:right" class="help-arrow"></iconify-icon>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer container">
+        <div class="footer-content">
+            <div class="footer-left">
+                <div class="footer-column">
+                    <div class="footer-column-heading">Shop</div>
+                    <ul>
+                        <li><a href="#">Mattresses</a></li>
+                        <li><a href="#">Bed Frames</a></li>
+                        <li><a href="#">Pillows & Bolster</a></li>
+                        <li><a href="#">Accessories</a></li>
+                        <li><a href="#">Bundles</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <div class="footer-column-heading">Why Heveya</div>
+                    <ul>
+                        <li><a href="#">Our Story</a></li>
+                        <li><a href="#">Sustainability</a></li>
+                        <li><a href="#">Charity</a></li>
+                        <li><a href="#">Careers at Heveya®</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <div class="footer-column-heading">Support</div>
+                    <ul>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">Size Guide</a></li>
+                        <li><a href="#">Made to Order</a></li>
+                        <li><a href="#">Warranty</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <div class="footer-column-heading">Others</div>
+                    <ul>
+                        <li><a href="#">Showroom</a></li>
+                        <li><a href="#">Book Appointment</a></li>
+                    </ul>
+                </div>
+                <div class="footer-image">
+                    <img src="img/bcorp-edited.png" alt="BCORP">
+                </div>
+            </div>
+
+            <div class="footer-right">
+                <h4>Catch up on the latest snooze!</h4>
+                <p>Receive $30* off your first purchase when you sign up for our newsletter for inspiration,
+                    exclusive
+                    previews & sleeping tips.</p>
+                <form class="subscribe-form">
+                    <input type="email" placeholder="Enter your email" />
+                    <button type="submit"> <iconify-icon icon="mingcute:right-line"></iconify-icon></button>
+                </form>
+                <div class="social-icons">
+                    <a href="#"><iconify-icon icon="mdi:instagram"></iconify-icon></a>
+                    <a href="#"><iconify-icon icon="mdi:facebook"></iconify-icon></a>
+                    <a href="#"><iconify-icon icon="ic:baseline-tiktok"></iconify-icon></a>
+                    <a href="#"><iconify-icon icon="ri:youtube-fill"></iconify-icon></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Horizontal line and bottom footer -->
+        <hr class="footer-divider">
+
+        <div class="footer-bottom">
+            <div class="footer-bottom-left">
+                © 2025 Heveya®. All Rights Reserved.
+            </div>
+            <div class="footer-bottom-right">
+                <a href="#">After Sales Service</a>
+                <a href="#">Terms & Conditions</a>
+                <a href="#">Privacy Policy</a>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
